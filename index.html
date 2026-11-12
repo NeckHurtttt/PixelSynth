@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PixelSynth</title>
+<meta name="description" content="Sintetizador y secuenciador chiptune en el navegador.">
+<link rel="icon" href="icono.svg">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <img src="icono.svg" alt="" width="44" height="44">
+  <div><h1>PIXEL<span>SYNTH</span></h1><p>Chiptune en tu navegador · 4 canales · 16 pasos</p></div>
+  <canvas id="osc" width="360" height="56" aria-label="Osciloscopio"></canvas>
+</header>
+
+<section class="barra">
+  <button id="play" class="grande">▶ PLAY</button>
+  <label>TEMPO <input id="bpm" type="range" min="70" max="200" value="128"><b id="bpmv">128</b></label>
+  <label>SWING <input id="swing" type="range" min="0" max="60" value="0"><b id="swingv">0%</b></label>
+  <label>ESCALA <select id="escala"></select></label>
+  <label>TONO <select id="tono"></select></label>
+  <span class="sep"></span>
+  <button id="demo">DEMO</button>
+  <button id="azar">AZAR</button>
+  <button id="borrar">BORRAR</button>
+  <button id="compartir">COMPARTIR</button>
+  <button id="wav">⬇ WAV</button>
+</section>
+
+<main id="pistas"></main>
+
+<section class="ayuda">
+  <p><b>Clic</b> prende o apaga una nota · <b>arrastra</b> para pintar · <b>Espacio</b> play/stop · teclas <b>A S D F G H J K</b> tocan el lead en vivo.</p>
+  <p>Todo el sonido se genera con la Web Audio API: ondas cuadradas, triangulares y ruido, como una consola de 8 bits.</p>
+</section>
+<footer>PIXELSYNTH · <a href="https://github.com/NeckHurtttt/PixelSynth">código</a> · hecho por NeckHurtttt</footer>
+<div id="aviso" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
